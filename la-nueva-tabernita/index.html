@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>La Nueva Tabernita · Madrid</title>
+<meta name="description" content="La Nueva Tabernita, comida casera en la calle Delicias, junto a Atocha. Abierto desde primera hora.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,700;7..72,800&family=Mulish:wght@400;600;700&display=swap">
+<style>
+:root{
+  --bg:#F3F4F8;--surface:#FFFFFF;--ink:#171B2A;--muted:#575E73;--line:#D9DCE6;
+  --brand:#1D2A4F;--brand-ink:#EEF1FA;--acc:#E3A528;--acc-ink:#1E1505;--soft:#E8EAF1;
+  --display:"Literata", Georgia, serif;--body:"Mulish", system-ui, sans-serif;--maxw:1120px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#11141A;--surface:#191D25;--ink:#ECEEF2;--muted:#A6ADBA;--line:#2A303B;--soft:#202632;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#11141A;--surface:#191D25;--ink:#ECEEF2;--muted:#A6ADBA;--line:#2A303B;--soft:#202632;color-scheme:dark}
+*{box-sizing:border-box}[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+a{color:inherit}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1.02;margin:0;text-wrap:balance;letter-spacing:-.015em}
+h2{font-size:clamp(2.1rem,4.6vw,3.4rem)}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--acc-text,var(--brand));margin:0 0 12px}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:6px}
+.demo{background:var(--soft);font-size:.82rem;text-align:center}.demo .wrap{padding-block:7px}
+header.top{position:sticky;top:0;z-index:20;background:var(--brand);color:var(--brand-ink)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.logo{text-decoration:none;display:flex;flex-direction:column}
+.logo b{font-family:var(--display);font-weight:800;font-size:1.45rem;line-height:1;letter-spacing:-.015em}
+.logo small{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;opacity:.75;font-weight:600;margin-top:4px}
+nav.links{display:flex;gap:24px;font-weight:600;font-size:.95rem}nav.links a{text-decoration:none;opacity:.85}nav.links a:hover{opacity:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;border-radius:8px;padding:13px 20px;border:0;cursor:pointer;font:inherit;font-weight:700;transition:transform .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-acc{background:var(--acc);color:var(--acc-ink)}
+.btn-ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 2px currentColor}
+@media (max-width:820px){nav.links{display:none}header.top .btn{padding:9px 14px;font-size:.9rem}}
+.hero{background:var(--brand);color:var(--brand-ink);overflow:hidden;position:relative}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 0%, rgba(227,165,40,.22), transparent 45%);pointer-events:none;opacity:.5}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding-block:64px 80px}
+.hero .eyebrow{color:var(--acc)}
+.hero h1{font-size:clamp(2.8rem,7.2vw,5.6rem)}
+.hero h1 em{font-style:normal;color:var(--acc)}
+.hero .lead{font-size:1.15rem;opacity:.9;max-width:40ch;margin:22px 0 30px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.proof{display:flex;gap:30px;flex-wrap:wrap;margin-top:34px;padding-top:24px;border-top:1px solid color-mix(in srgb,var(--brand-ink) 22%,transparent)}
+.proof b{font-family:var(--display);font-weight:800;font-size:2.1rem;line-height:1;display:block;color:var(--acc)}
+.proof small{font-size:.86rem;opacity:.85}
+.card{background:var(--surface);color:var(--ink);border-radius:12px;padding:30px;box-shadow:0 30px 60px rgba(0,0,0,.28);transform:rotate(-1.2deg);position:relative;min-width:0}
+.card::before{content:"";position:absolute;inset:10px;border:1px solid var(--line);border-radius:calc(12px - 6px);pointer-events:none}
+.card h3{font-size:2rem;text-align:center}
+.card .sub{text-align:center;color:var(--muted);margin:4px 0 18px;font-size:.95rem}
+.card ul{list-style:none;margin:0;padding:0;display:grid}
+.card li{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px dashed var(--line);align-items:baseline}
+.card li:last-child{border-bottom:0}
+.card li span{font-weight:600;min-width:0}.card li em{font-style:normal;color:var(--muted);font-size:.9rem;text-align:right;white-space:nowrap}
+.card .stamp{position:absolute;top:-22px;right:-10px;background:var(--acc);color:var(--acc-ink);font-family:var(--display);font-weight:800;border-radius:999px;width:96px;height:96px;display:grid;place-items:center;text-align:center;line-height:1;font-size:.95rem;transform:rotate(10deg);padding:8px}
+@media (max-width:820px){.hero .wrap{grid-template-columns:1fr;padding-block:40px 56px;gap:44px}.card{padding:24px 20px}.card .stamp{width:80px;height:80px;font-size:.8rem;right:0}}
+.strip{border-bottom:1px solid var(--line);background:var(--surface)}
+.strip ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr)}
+.strip li{padding:22px 18px;border-left:1px solid var(--line);min-width:0}.strip li:first-child{border-left:0;padding-left:0}
+.strip b{display:block}.strip small{color:var(--muted);font-size:.88rem}
+@media (max-width:820px){.strip ul{grid-template-columns:1fr 1fr}.strip li:nth-child(3){border-left:0;padding-left:0}.strip li{border-top:1px solid var(--line)}.strip li:nth-child(-n+2){border-top:0}}
+section{padding-block:80px}@media (max-width:820px){section{padding-block:56px}}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:36px}.head p{max-width:46ch;color:var(--muted);margin:0}
+.dishes{display:grid;grid-template-columns:1fr 1fr;gap:0 56px}
+.dish{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding-block:18px;border-bottom:1px solid var(--line)}
+.dtxt{min-width:0}.dish h3{font-size:1.4rem}.dish p{margin:4px 0 0;color:var(--muted);font-size:.95rem}
+.dish .price{font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+.note{margin-top:22px;color:var(--muted);font-size:.9rem}
+@media (max-width:820px){.dishes{grid-template-columns:1fr}}
+.extra{background:var(--soft)}.xgrid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.extra p{color:var(--muted);margin-top:0}
+@media (max-width:820px){.xgrid{grid-template-columns:1fr;gap:16px}}
+.reviews{background:var(--surface);border-block:1px solid var(--line)}
+.quotes{display:grid;grid-template-columns:1.25fr 1fr;gap:20px}
+.q{margin:0;padding:26px;border-radius:12px;background:var(--bg);display:flex;flex-direction:column;justify-content:space-between;gap:16px;min-width:0}
+.q blockquote{margin:0;font-family:var(--display);font-weight:800;font-size:1.45rem;line-height:1.18}
+.q.big{grid-row:span 2;background:var(--brand);color:var(--brand-ink)}.q.big blockquote{font-size:clamp(1.8rem,3.6vw,2.6rem)}
+.q figcaption{font-size:.88rem;opacity:.8}.q .st{color:var(--acc)}
+.quotes:has(.q:nth-child(2):last-child) .q.big{grid-row:auto}
+@media (max-width:820px){.quotes{grid-template-columns:1fr}.q.big{grid-row:auto}}
+.visit .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.addr{font-size:1.25rem;font-weight:600;margin:18px 0}
+.num{font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,4.4vw,2.6rem);line-height:1;user-select:all;display:block;margin:6px 0 12px;font-variant-numeric:tabular-nums}
+.copy{font:inherit;font-size:.82rem;font-weight:700;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.hours{width:100%;border-collapse:collapse;margin-top:12px}.hours td{padding:11px 0;border-bottom:1px solid var(--line)}.hours td:last-child{text-align:right;color:var(--muted)}
+.hours tr.closed td:last-child{color:var(--brand);font-weight:700}
+.mapcard{display:block;text-decoration:none;border-radius:12px;overflow:hidden;position:relative;margin-top:22px;border:1px solid var(--line);background:var(--soft)}
+.mapcard svg{display:block;width:100%;height:auto}
+.mapcard span{position:absolute;left:16px;bottom:16px;background:var(--brand);color:var(--brand-ink);font-weight:700;padding:9px 15px;border-radius:8px;font-size:.92rem}
+.social{display:inline-block;font-weight:600;margin-top:4px}
+@media (max-width:820px){.visit .wrap{grid-template-columns:1fr;gap:28px}}
+footer{padding-block:28px 110px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.callbar{display:none}
+@media (max-width:820px){.callbar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--surface);border-top:1px solid var(--line);padding-top:10px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}.callbar .btn-ghost{color:var(--ink)}}
+</style>
+</head>
+<body>
+<div class="demo"><div class="wrap">Vista previa · Propuesta de web para La Nueva Tabernita</div></div>
+<header class="top"><div class="wrap">
+  <a class="logo" href="#inicio"><b>La Nueva Tabernita</b><small>Comida casera · Delicias</small></a>
+  <nav class="links" aria-label="Secciones"><a href="#carta">La carta</a><a href="#visitanos">Visítanos</a></nav>
+  <a class="btn btn-acc" href="tel:+34631019873">Reservar</a>
+</div></header>
+<main id="inicio">
+<section class="hero" style="padding-block:0"><div class="wrap">
+  <div>
+    <p class="eyebrow">Comida casera junto a Atocha</p>
+    <h1>Comida casera, <em>rápida y con cariño</em></h1>
+    <p class="lead">Albóndigas caseras, patatas con costilla y un servicio rápido y amable. A un paso de la estación de Atocha.</p>
+    <div class="ctas"><a class="btn btn-acc" href="tel:+34631019873">Llamar y reservar · 631 01 98 73</a><a class="btn btn-ghost" href="#carta">Ver la carta</a></div>
+    <div class="proof"><div><b>4,5/5</b><small>914 valoraciones</small></div><div><b>8:00</b><small>Abrimos temprano</small></div><div><b>Atocha</b><small>A un paso</small></div></div>
+  </div>
+  <div class="card" aria-label="De la casa">
+    <span class="stamp">Junto a Atocha</span>
+    <h3>De la casa</h3><p class="sub">Platos que nombran los clientes</p>
+    <ul><li><span>Albóndigas caseras</span><em>Con patatas</em></li><li><span>Patatas con costilla</span><em>Guiso</em></li><li><span>Comida casera</span><em>Todos los días</em></li><li><span>Desayunos</span><em>Desde las 8:00</em></li></ul>
+  </div>
+</div></section>
+<div class="strip"><div class="wrap"><ul><li><b>Casero</b><small>Cocina de toda la vida</small></li><li><b>Rápido</b><small>Ideal antes del tren</small></li><li><b>Desde las 8:00</b><small>Desayunos</small></li><li><b>Atocha</b><small>A un paso</small></li></ul></div></div>
+<section id="carta"><div class="wrap">
+  <div class="head"><div><p class="eyebrow">De nuestra cocina</p><h2>Lo que más gusta</h2></div><p>Los platos que más recuerdan quienes vienen.</p></div>
+  <div class="dishes"><div class="dish"><div class="dtxt"><h3>Albóndigas caseras</h3><p>Con patatas, de las que hacen volver.</p></div></div><div class="dish"><div class="dtxt"><h3>Patatas con costilla</h3><p>Guiso de cuchara.</p></div></div><div class="dish"><div class="dtxt"><h3>Comida casera</h3><p>Platos del día, hechos aquí.</p></div></div><div class="dish"><div class="dtxt"><h3>Desayunos</h3><p>Para empezar el día.</p></div></div></div>
+  <p class="note">Escanea el QR del local o pregunta por la carta completa.</p>
+</div></section>
+
+<section class="extra"><div class="wrap xgrid"><div><p class="eyebrow">¿Vas a coger el tren?</p><h2>Come bien antes de salir de Atocha</h2></div><div><p>Estamos a un paso de la estación. Servicio rápido para que comas tranquilo antes del viaje.</p></div></div></section>
+<section class="visit" id="visitanos"><div class="wrap">
+  <div>
+    <p class="eyebrow">Visítanos</p><h2>Calle de las Delicias, 27</h2>
+    <p class="addr">Calle de las Delicias, 27<br>Madrid · junto a Atocha</p>
+    
+    <a class="mapcard" href="https://www.google.com/maps/search/?api=1&amp;query=La+Nueva+Tabernita+Calle+de+las+Delicias%2C+27+Madrid" target="_blank" rel="noopener" aria-label="Abrir en Google Maps">
+      <svg viewBox="0 0 520 200" aria-hidden="true"><rect width="520" height="200" fill="var(--soft)"/>
+      <g stroke="var(--surface)" stroke-width="16" fill="none" stroke-linecap="round"><path d="M-10 120 L530 92"/><path d="M170 -10 L205 210"/><path d="M405 -10 L382 210"/></g>
+      <g stroke="var(--surface)" stroke-width="6" fill="none" opacity=".8"><path d="M-10 36 L530 26"/><path d="M70 -10 L88 210"/><path d="M292 -10 L300 210"/><path d="M-10 178 L530 170"/></g>
+      <text x="226" y="88" fill="var(--muted)" font-family="sans-serif" font-size="12" font-weight="600" transform="rotate(-3 226 88)">Calle de las Delicias</text>
+      <circle cx="252" cy="110" r="24" fill="var(--brand)" opacity=".18"/>
+      <path d="M252 122 C242 108 236 100 236 92 a16 16 0 0 1 32 0 c0 8 -6 16 -16 30z" fill="var(--brand)" stroke="var(--surface)" stroke-width="2"/><circle cx="252" cy="92" r="5" fill="var(--surface)"/></svg>
+      <span>Cómo llegar →</span></a>
+  </div>
+  <div>
+    <h3 style="font-size:1.6rem">Contacto y horario</h3>
+    <span class="num" id="num">631 01 98 73</span>
+    <button class="copy" type="button" data-copy="631 01 98 73">Copiar número</button>
+    <table class="hours"><tbody><tr><td>Lunes</td><td>08:00 – 23:45</td></tr><tr><td>Martes</td><td>08:00 – 23:45</td></tr><tr><td>Jueves</td><td>08:00 – 23:45</td></tr><tr><td>Viernes</td><td>08:00 – 23:45</td></tr><tr><td>Sábado</td><td>09:00 – 23:45</td></tr><tr><td>Domingo</td><td>09:00 – 23:45</td></tr></tbody></table>
+    <p style="color:var(--muted);font-size:.92rem;margin-top:16px">Llámanos para confirmar el horario del miércoles.</p>
+  </div>
+</div></section>
+</main>
+<footer><div class="wrap"><span>© La Nueva Tabernita · Comida casera · Delicias</span><span>Calle de las Delicias, 27, Madrid</span></div></footer>
+<div class="callbar"><a class="btn btn-acc" href="tel:+34631019873">Llamar</a><a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=La+Nueva+Tabernita+Calle+de+las+Delicias%2C+27+Madrid" target="_blank" rel="noopener">Cómo llegar</a></div>
+<script>
+document.querySelectorAll('.copy').forEach(function(b){b.addEventListener('click',function(){var t=b.textContent,d=function(){b.textContent='Copiado';setTimeout(function(){b.textContent=t},1600)};try{navigator.clipboard.writeText(b.dataset.copy).then(d,s)}catch(e){s()}})});
+function s(){var c=document.getElementById('num'),r=document.createRange();r.selectNodeContents(c);var x=getSelection();x.removeAllRanges();x.addRange(r)}
+</script>
+</body>
+</html>
