@@ -166,6 +166,11 @@ section{padding-block:84px}@media (max-width:900px){section{padding-block:56px}}
 @media (max-width:900px){.visit .wrap{grid-template-columns:1fr;gap:28px}}
 footer{padding-block:28px 110px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
 footer b{font-family:var(--display);font-weight:400;font-size:1.2rem;color:var(--ink)}
+.photoband{padding:0;border:0}
+.photoband img{width:100%;height:clamp(240px,42vw,520px);object-fit:cover;display:block}
+.pgal{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.pgal img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:12px;background:var(--soft);display:block}
+@media (max-width:900px){.pgal{grid-template-columns:repeat(2,1fr)}}
 .callbar{display:none}
 @media (max-width:900px){.callbar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--surface);border-top:1px solid var(--line);padding-top:10px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}.callbar .btn-ghost{color:var(--ink)}}
 </style>
@@ -177,7 +182,7 @@ footer b{font-family:var(--display);font-weight:400;font-size:1.2rem;color:var(-
 <div class="demo"><div class="wrap">Vista previa · Propuesta de web para Restaurante El Trigo</div></div>
 <header class="top"><div class="wrap">
   <a class="logo" href="#inicio"><svg class="spike" style="color:var(--wheat)"><use href="#spike"/></svg><span><b>El Trigo</b><small>Restaurante · Leganés</small></span></a>
-  <nav class="links" aria-label="Secciones"><a href="#menus">Menús</a><a href="#carta">Carta</a><a href="#eventos">Eventos</a><a href="#visitanos">Visítanos</a></nav>
+  <nav class="links" aria-label="Secciones"><a href="#menus">Menús</a><a href="#carta">Carta</a><a href="#eventos">Eventos</a><a href="#fotos">Fotos</a><a href="#visitanos">Visítanos</a></nav>
   <a class="btn btn-wheat" href="tel:+34635505693">Reservar</a>
 </div></header>
 
@@ -217,6 +222,8 @@ footer b{font-family:var(--display);font-weight:400;font-size:1.2rem;color:var(-
   <li><b>Para llevar</b><small>Menús, arroces y raciones</small></li>
   <li><b>Eventos</b><small>Comuniones, cumpleaños, empresas</small></li>
 </ul></div></div>
+
+<section class="photoband" aria-label="Foto del restaurante"><img src="https://lh7-us.googleusercontent.com/sitesv-images-rt/APXyLQcap8ZRmmC_fmyUwzWMOq9M5dzsDZonIFHcdfn7963N09U1zJ5eZx2fqcUzf4nUjlRK2mF-aFizYdI926Mmcd9XTmJgbgwsUYylmNMgKm61W3MKiuPN92YhbMsNJhxGsikKaE6b6yw52zc6LEX7P06nsIFkM0XU7lB_Uals18uvVIekFcLzfAIUurEDS81Ld15UL63UInHlV8_LRgCGSuzRi0VSBSTfLjOFOgIn=w1280" alt="Restaurante El Trigo en Leganés" referrerpolicy="no-referrer" onerror="this.closest('section').hidden=true"></section>
 
 <section><div class="wrap">
   <div class="head"><div><p class="eyebrow">Un día en El Trigo</p><h2>De la madrugada a la medianoche</h2></div><p>Abrimos antes que nadie y cerramos a la una. Pásate cuando quieras.</p></div>
@@ -325,6 +332,25 @@ footer b{font-family:var(--display);font-weight:400;font-size:1.2rem;color:var(-
     <div class="tc"><b>150</b><span>Plazas en nuestra terraza cubierta y climatizada, todo el año.</span></div>
     <div class="tc"><b>7 días</b><span>Abiertos toda la semana, de madrugada a medianoche.</span></div>
     <div class="tc"><b>Para llevar</b><span>Menús, arroces y raciones listos para recoger.</span></div>
+  </div>
+</div></section>
+
+<section id="fotos"><div class="wrap">
+  <div class="head"><div><p class="eyebrow">En El Trigo</p><h2>Así se come aquí</h2></div><p>Nuestros platos, el comedor y la terraza.</p></div>
+  <div class="pgal">
+    <img src="https://lh7-us.googleusercontent.com/sitesv-images-rt/APXyLQec7_7R0avAquKXDQejYOYAE_HssD0syQkWk90yrYREAjzAaAF75W8wsjNForsbGU9dkFoZrsKq8pLi67Gd-27ZvraBp1JkDGo7KulRwKoGWSQktfNAdScQwtLcjcI5jfXECPTRp_OT618JTYl7UtKwJFMuo2MoGi_aMZD92EvSC954CANSA48NUvCE7-T0xh2JeQ0Wofov5Ygi-qxXw-L7QtVAt5N-eLbBozK4EVU=w800" alt="Foto de Restaurante El Trigo" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    <img src="https://lh7-us.googleusercontent.com/sitesv-images-rt/APXyLQcR3AcBBUpvZEO-RnYgMlCaXdORFGSXpWljY-5g6dL2-YHv7Ft-LzJLNvO26DjTaScyMBeu3CLB05CXGfF65-nyblOkFAvFrOJ6Znugu9B0ZIhsNdqjnGDUlg4ZEErZD7be7nH4AQ6yTAQ2HkDreMexhbIeb8Gdnh-7hmFDrRG4DsZkC6G67nJZ60Dh=w800" alt="Foto de Restaurante El Trigo" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    <img src="https://lh7-us.googleusercontent.com/sitesv-images-rt/APXyLQd2QANigZ-ba1M41uLXBrTWJ8ckTbCT2kmH0BtAEfH0VUhpWT5NkbxYRcTbXWhsUZNNqCEIiQqTQpfe0WVBZ_eCR_tHWLXGXIAnKRMdSO5pdtCDIl4tl8LXWLasMmASKCXTodMvDkc1T7SZbXGFKagpXLHPr9Tn3VZyW-9IHn4JGlWB339wq-6x4zshXqk=w800" alt="Foto de Restaurante El Trigo" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    <img src="https://lh7-us.googleusercontent.com/sitesv-images-rt/APXyLQePGHVZShuWitKbgY0JFiQc9nQ_beaOF71Ji5NtrCsfGiCw7b8xa47atQRupbWhzmL1uP3_1bi-utqqAUHHMBloknMBuwZYmzgpjHiPbmPmv7D8lII7yXj4NZl_A-PxI7-Zs83DLl1b4z7hhHkXmyFTopGJx8MK0DmpCvoUcUqLClOvSx6snyxKkaGzyrg=w800" alt="Foto de Restaurante El Trigo" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    <img src="https://lh7-us.googleusercontent.com/sitesv-images-rt/APXyLQdRh-P5cM2NIpRg6dK25SNU73cUPjtqumVhZ4hSzfrXfIjuyKfLAOyX-s6bX1o9oa8pnpMD96axwuK2hDUJmH9vTJ0Fpyn60xg1jVVuDL19SHWPLAB0L5fbgqwfNLhQCL89H8qr7sr3zNn-mlqBi0e0XpHL2ZQY7ZX6WAINzkbUFfPMw2FaCKhwf6J04Ok=w800" alt="Foto de Restaurante El Trigo" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    <img src="https://lh7-us.googleusercontent.com/sitesv-images-rt/APXyLQcPc_iBPzV926WbzL_7EjVojucZ_G-6MzgXkfrF9p8NOenR1yH_gXQX6bqHUKfn3GrOwOS1rjZjOTGW4fcT9XzToaf4HLiOlPa27UZJx5kca81bNO6xjh75q4hXKZ0O-d1P5XsWaCOC9lTpcmRYs2gS7wn9oMqrl5VEmRKCl9DeIRcB5ghFiU4PzXa5=w800" alt="Foto de Restaurante El Trigo" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    <img src="https://lh7-us.googleusercontent.com/sitesv-images-rt/APXyLQfShkZrhmt-FWf-nikkH9iM5R1ZvCDxaMNExPFQhLal0TEBEXpOBXlxfwFXBBfFYPWobH4xD3mOMZOTymRXYJfTh9ujLcYzrWAudFQSO0MmvOxpFGbCCQ_7F46yNNGyWKPU4U2a_vLRZuHYWkB_kc8wfrdbaX0wZkJby6WUaOCHg2byHohNd1kBkVEYCgE=w800" alt="Foto de Restaurante El Trigo" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    <img src="https://lh7-us.googleusercontent.com/sitesv-images-rt/APXyLQd2rUKlPioStudu6pvhlKE2IKD4jtJIieIc33L1GMNcX--JNZMvgwOHDLJVP2-kNZ8rTfsubnTWLMvMHxGoz6N2ENVZ5ZJnUXlO9N-9Xwi2ve8Bn5YXV6ADr-FVkQDwkZBJ2yLDI5IT-XfjJDE9YWd6OECwRYLIjHjg_Ml5PCYklHnOacmAuEgW_wrg_Fk=w800" alt="Foto de Restaurante El Trigo" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    <img src="https://lh7-us.googleusercontent.com/sitesv-images-rt/APXyLQe9ZjzGSeuuHTSJEg-FAY-b2qY-LNdSCKgKuse5Oo-HaE1Ji-WouPtZf_pk6JpkWOacBYXkMyilWkEfqrb59wjNvkstzkd0TgEusRa9p029Vze77G2EtPSsU1UdKsswlTzfZ3Sn4E2BDEWQnJIzMIkFjnq4_MckeK0y8Oy08JXqV2P52E7wzQn2RaER_bM=w800" alt="Foto de Restaurante El Trigo" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    <img src="https://lh7-us.googleusercontent.com/sitesv-images-rt/APXyLQem3i0azLGPR3AHbCthybP-Wze8s-Rp8WEt2zMqOM2oiCJCOpJgXDIkdroIXhEaSgKhHPPTpOxiyJrGbmkIVzeX7bJ_CuiGxMyHJHLaJYv2ZFtTTX36KfEgsr-Z8KFaunJFTSzJRz8Fvqx-qLDY0IuTxXRxhG2qIbe8myiKxaKjMdmTqR_A87tgJ_rC0A2j_ELuyHN1S2fm4o4xOKGFppOOWeRwoMwIFmioVcLvgkU=w800" alt="Foto de Restaurante El Trigo" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    <img src="https://lh7-us.googleusercontent.com/sitesv-images-rt/APXyLQeLVbHv9sao8THoiQ-XCMrTsgIxTRP8eRinFojdI0e4cLDV1Sp_C5RjRdKwHF3OXYkM4LAMI-jkR-kZLh7WFd8kTq2fEIH6TXmXx7Z9HoFRhfOj4eSWd3TtqSMD8AIGq9Lipf9wxM_B5PtbxhMa88rDKoRYCN0pdOJiBl_nZZL-7ubr3zU7ceVSyyieKFq6M57Tm209hW0gvthYCgv28RqJaeGAtZkpaSn3mWfd=w800" alt="Foto de Restaurante El Trigo" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    <img src="https://lh7-us.googleusercontent.com/sitesv-images-rt/APXyLQfnbFOPxeiN2_t3SzCNSv5KSXyMAaRkzHrutV7BXnOipPOO_d2Q8-7r2XPdk9h6b-Ft4SuauCqsHEsBtRO8FZ_4jrBCfW8EvWosw8QQfXF0mMvSv90fjNaL9gOvQYkO0JDcK5GfACDQSFjva7_ONDiMNOplWREMJbSPG2fw6WduTE6PDd-5aAkMnghLNgkhcjwhOlkRJ9qnyFAVvTBkBubf0SdmZKkD9zcB1336HKk=w800" alt="Foto de Restaurante El Trigo" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    <img src="https://lh7-us.googleusercontent.com/sitesv-images-rt/APXyLQeUbCmggUpQ7--AGrN2SfHs7eBqZdGM-Ts8LBqWUvJ-vjx8p3s9oaMH7t26D-_l9Oq6c1JfIO5vtsULwltGchcO_Yh46cOjBYIpf3WQvOMQGxddY7QSvyc0fWLWA9PUCSBLszFVR7VySEAjleqhexDeDU7SU6TT_xev06SpuPU2pdXvWR0Ei1JWMTUqwj6ESGzt22KcIHFn3uvi8Z8bVwf3PNOOWX2rYZmA0QAfadc=w800" alt="Foto de Restaurante El Trigo" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
   </div>
 </div></section>
 
