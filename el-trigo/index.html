@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Restaurante El Trigo · Leganés</title>
+<meta name="description" content="Restaurante El Trigo, cocina casera en Leganés. Menú del día 13,50 €, menú de fin de semana 24,95 €, raciones, parrilla, arroces y eventos. Abierto desde las 5:30.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap">
+<style>
+/* Layout: casa de comidas castellana. Ocre de trigo y verde botella, slab de rótulo, espigas dibujadas. Héroe con "abrimos a las 5:30" y la tarjeta del menú del día; el día en horas; menús; carta por pestañas; eventos y terraza; opiniones; visita. */
+:root{
+  --bg:#F7F3EA; --surface:#FFFFFF; --ink:#1F1A12; --muted:#665C4C; --line:#E4DACA; --soft:#EFE6D4;
+  --green:#1F3B2C; --green-2:#2A4D3A; --green-ink:#F4F0E4; --green-muted:#B9C6B8;
+  --wheat:#D9A23A; --wheat-ink:#241703; --red:#B8402A;
+  --display:"Alfa Slab One", "Rockwell", Georgia, serif;
+  --body:"Nunito Sans", system-ui, -apple-system, sans-serif;
+  --maxw:1140px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#11140F;--surface:#191E17;--ink:#EEEADF;--muted:#ADA697;--line:#2D3329;--soft:#20261D;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#11140F;--surface:#191E17;--ink:#EEEADF;--muted:#ADA697;--line:#2D3329;--soft:#20261D;color-scheme:dark}
+*{box-sizing:border-box}[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.05;margin:0;text-wrap:balance}
+h2{font-size:clamp(2rem,4.6vw,3.2rem)}
+.eyebrow{font-size:.78rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin:0 0 12px}
+:focus-visible{outline:3px solid var(--wheat);outline-offset:3px;border-radius:6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;border-radius:8px;padding:13px 22px;border:0;cursor:pointer;font:inherit;font-weight:800;transition:transform .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-wheat{background:var(--wheat);color:var(--wheat-ink)}
+.btn-green{background:var(--green);color:var(--green-ink)}
+.btn-ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 2px currentColor}
+.spike{width:22px;height:40px;flex:none}
+
+.demo{background:var(--soft);font-size:.82rem;text-align:center}.demo .wrap{padding-block:7px}
+header.top{position:sticky;top:0;z-index:20;background:var(--green);color:var(--green-ink)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:10px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo b{font-family:var(--display);font-weight:400;font-size:1.4rem;line-height:1}
+.logo small{display:block;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--green-muted);font-weight:700;margin-top:4px}
+nav.links{display:flex;gap:22px;font-weight:700;font-size:.94rem}nav.links a{text-decoration:none;color:var(--green-muted)}nav.links a:hover{color:#fff}
+@media (max-width:900px){nav.links{display:none}header.top .btn{padding:9px 14px;font-size:.9rem}}
+
+.hero{background:var(--green);color:var(--green-ink);position:relative;overflow:hidden}
+.hero .field{position:absolute;inset:auto 0 0 0;height:60px;opacity:.14;pointer-events:none;background-repeat:repeat-x;background-size:30px 60px}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding-block:60px 96px}
+.clock{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:7px 14px;font-weight:800;font-size:.9rem;color:var(--wheat)}
+.hero h1{font-size:clamp(2.7rem,6.6vw,5rem);margin-top:18px}
+.hero h1 span{color:var(--wheat)}
+.hero .lead{font-size:1.12rem;color:var(--green-muted);max-width:42ch;margin:20px 0 28px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.proof{display:flex;gap:30px;flex-wrap:wrap;margin-top:32px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14)}
+.proof b{font-family:var(--display);font-weight:400;font-size:2rem;line-height:1;display:block;color:var(--wheat)}
+.proof small{font-size:.86rem;color:var(--green-muted)}
+
+.ticket{background:var(--bg);color:var(--ink);border-radius:14px;padding:28px 26px;position:relative;box-shadow:0 30px 60px rgba(0,0,0,.4);min-width:0}
+.ticket::before{content:"";position:absolute;inset:8px;border:2px dashed var(--line);border-radius:10px;pointer-events:none}
+.ticket .top{display:flex;justify-content:space-between;align-items:start;gap:12px}
+.ticket h3{font-size:1.7rem}
+.ticket .pr{font-family:var(--display);font-size:2.6rem;color:var(--red);line-height:1}
+.ticket .inc{color:var(--muted);font-size:.92rem;margin:6px 0 14px}
+.ticket .grp{font-weight:800;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-top:10px}
+.ticket ul{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.ticket li{background:var(--soft);border-radius:999px;padding:5px 11px;font-size:.86rem;font-weight:700}
+.ticket .foot{margin-top:16px;padding-top:12px;border-top:1px solid var(--line);font-size:.86rem;color:var(--muted)}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr;padding-block:36px 80px;gap:36px}}
+
+.strip{background:var(--surface);border-bottom:1px solid var(--line)}
+.strip ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr)}
+.strip li{padding:22px 18px;border-left:1px solid var(--line);min-width:0}.strip li:first-child{border-left:0;padding-left:0}
+.strip b{display:block;font-weight:800}.strip small{color:var(--muted);font-size:.9rem}
+@media (max-width:900px){.strip ul{grid-template-columns:1fr 1fr}.strip li:nth-child(3){border-left:0;padding-left:0}.strip li{border-top:1px solid var(--line)}.strip li:nth-child(-n+2){border-top:0}}
+
+section{padding-block:84px}@media (max-width:900px){section{padding-block:56px}}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:36px}.head p{max-width:48ch;color:var(--muted);margin:0}
+
+/* el día */
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:3px solid var(--wheat)}
+.slot{padding:22px 20px 0 0;position:relative;min-width:0}
+.slot::before{content:"";position:absolute;top:-10px;left:0;width:16px;height:16px;border-radius:50%;background:var(--wheat);border:3px solid var(--bg)}
+.slot .h{font-family:var(--display);font-size:1.7rem;color:var(--red);line-height:1}
+.slot h3{font-family:var(--body);font-weight:800;font-size:1.15rem;margin:10px 0 6px}
+.slot p{margin:0;color:var(--muted);font-size:.95rem}
+.slot .p{display:inline-block;margin-top:10px;font-weight:800}
+@media (max-width:900px){.timeline{grid-template-columns:1fr;border-top:0;border-left:3px solid var(--wheat);gap:26px;padding-left:22px}.slot{padding:0}.slot::before{top:4px;left:-32px}}
+
+/* menús */
+.menus{background:var(--surface);border-block:1px solid var(--line)}
+.mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.mcard{border:1px solid var(--line);border-radius:14px;padding:26px;display:flex;flex-direction:column;gap:10px;background:var(--bg);min-width:0}
+.mcard.hot{background:var(--green);color:var(--green-ink);border-color:var(--green)}
+.mcard .k{font-weight:800;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.mcard.hot .k{color:var(--wheat)}
+.mcard h3{font-size:1.6rem}
+.mcard .pr{font-family:var(--display);font-size:2.8rem;line-height:1;color:var(--red)}
+.mcard.hot .pr{color:var(--wheat)}
+.mcard p{margin:0;color:var(--muted);font-size:.95rem}.mcard.hot p{color:var(--green-muted)}
+.mcard .mini{margin-top:auto;padding-top:12px;border-top:1px dashed var(--line);font-size:.9rem;display:grid;gap:4px}
+.mcard.hot .mini{border-color:rgba(255,255,255,.2)}
+.mcard .mini span{display:flex;justify-content:space-between;gap:10px}
+@media (max-width:900px){.mgrid{grid-template-columns:1fr}}
+
+/* carta */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.tab{font:inherit;font-weight:800;font-size:.94rem;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--green);border-color:var(--green);color:var(--green-ink)}
+.panel{display:grid;grid-template-columns:1fr 1fr;gap:0 56px}
+.it{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px dotted var(--line);min-width:0}
+.it span:first-child{font-weight:700;min-width:0}
+.it small{display:block;font-weight:400;color:var(--muted);font-size:.88rem}
+.it .p{font-family:var(--display);font-size:1.15rem;color:var(--red);white-space:nowrap;font-variant-numeric:tabular-nums}
+.pn{grid-column:1/-1;margin:20px 0 0;padding:14px 18px;border-radius:10px;background:var(--soft);font-weight:700;font-size:.95rem}
+@media (max-width:900px){.panel{grid-template-columns:1fr}}
+
+/* eventos */
+.events{background:var(--wheat);color:var(--wheat-ink)}
+.events .wrap{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.events .eyebrow{color:#6B2A12}
+.events p{color:#3D2A08;max-width:46ch}
+.gifts{display:grid;gap:12px}
+.gift{background:rgba(255,255,255,.55);border-radius:12px;padding:18px 20px;display:flex;gap:14px;align-items:start}
+.gift b{display:block;font-weight:800}
+.gift span{color:#4A3410;font-size:.95rem}
+.gift i{font-style:normal;font-family:var(--display);font-size:1.5rem;color:var(--red);line-height:1;min-width:30px}
+@media (max-width:900px){.events .wrap{grid-template-columns:1fr;gap:24px}}
+
+/* terraza */
+.terrace{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tc{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;min-width:0}
+.tc b{font-family:var(--display);font-size:2.2rem;color:var(--green);display:block;line-height:1;margin-bottom:8px}
+:root[data-theme="dark"] .tc b{color:var(--wheat)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .tc b{color:var(--wheat)}}
+.tc span{color:var(--muted)}
+@media (max-width:900px){.terrace{grid-template-columns:1fr}}
+
+/* opiniones */
+.reviews{background:var(--green);color:var(--green-ink)}
+.reviews .eyebrow{color:var(--wheat)}
+.reviews .head p{color:var(--green-muted)}
+.big{display:flex;align-items:center;gap:18px;margin-bottom:28px;flex-wrap:wrap}
+.big b{font-family:var(--display);font-size:4rem;line-height:1;color:var(--wheat)}
+.big .st{color:var(--wheat);font-size:1.4rem;letter-spacing:3px}
+.says{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.say{background:var(--green-2);border-radius:14px;padding:22px;min-width:0}
+.say b{font-family:var(--display);font-size:1.3rem;display:block;line-height:1.1;margin-bottom:8px}
+.say span{color:var(--green-muted);font-size:.95rem}
+@media (max-width:900px){.says{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.says{grid-template-columns:1fr}}
+
+.visit .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.addr{font-size:1.25rem;font-weight:700;margin:14px 0}
+.num{font-family:var(--display);font-size:clamp(2.2rem,5vw,3rem);line-height:1;user-select:all;display:block;margin:4px 0 12px;font-variant-numeric:tabular-nums}
+.copy{font:inherit;font-size:.82rem;font-weight:800;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.hours{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;margin-top:12px}
+.hours td{padding:11px 0;border-bottom:1px solid var(--line)}.hours td:last-child{text-align:right;color:var(--muted)}
+.pay{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.pay span{padding:6px 12px;border-radius:999px;background:var(--soft);font-weight:700;font-size:.88rem}
+.mapcard{display:block;text-decoration:none;border-radius:14px;overflow:hidden;position:relative;margin-top:20px;border:1px solid var(--line);background:var(--soft)}
+.mapcard svg{display:block;width:100%;height:auto}
+.mapcard span{position:absolute;left:14px;bottom:14px;background:var(--green);color:var(--green-ink);font-weight:800;padding:9px 15px;border-radius:8px;font-size:.92rem}
+@media (max-width:900px){.visit .wrap{grid-template-columns:1fr;gap:28px}}
+footer{padding-block:28px 110px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+footer b{font-family:var(--display);font-weight:400;font-size:1.2rem;color:var(--ink)}
+.callbar{display:none}
+@media (max-width:900px){.callbar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--surface);border-top:1px solid var(--line);padding-top:10px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}.callbar .btn-ghost{color:var(--ink)}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="spike" viewBox="0 0 22 40"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M11 40V8"/><path d="M11 12c-4-1-6-4-6-7 3 0 6 2 6 6M11 12c4-1 6-4 6-7-3 0-6 2-6 6M11 20c-4-1-6-4-6-7 3 0 6 2 6 6M11 20c4-1 6-4 6-7-3 0-6 2-6 6M11 28c-4-1-6-4-6-7 3 0 6 2 6 6M11 28c4-1 6-4 6-7-3 0-6 2-6 6M11 8c0-3 0-5 0-7"/></g></symbol>
+</defs></svg>
+<div class="demo"><div class="wrap">Vista previa · Propuesta de web para Restaurante El Trigo</div></div>
+<header class="top"><div class="wrap">
+  <a class="logo" href="#inicio"><svg class="spike" style="color:var(--wheat)"><use href="#spike"/></svg><span><b>El Trigo</b><small>Restaurante · Leganés</small></span></a>
+  <nav class="links" aria-label="Secciones"><a href="#menus">Menús</a><a href="#carta">Carta</a><a href="#eventos">Eventos</a><a href="#visitanos">Visítanos</a></nav>
+  <a class="btn btn-wheat" href="tel:+34635505693">Reservar</a>
+</div></header>
+
+<main id="inicio">
+<section class="hero" style="padding-block:0">
+  <div class="field" aria-hidden="true" style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='120' viewBox='0 0 22 60'%3E%3Cg fill='none' stroke='%23F4F0E4' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='M11 60V8'/%3E%3Cpath d='M11 12c-4-1-6-4-6-7 3 0 6 2 6 6M11 12c4-1 6-4 6-7-3 0-6 2-6 6M11 20c-4-1-6-4-6-7 3 0 6 2 6 6M11 20c4-1 6-4 6-7-3 0-6 2-6 6M11 28c-4-1-6-4-6-7 3 0 6 2 6 6M11 28c4-1 6-4 6-7-3 0-6 2-6 6'/%3E%3C/g%3E%3C/svg%3E&quot;)"></div>
+  <div class="wrap">
+    <div>
+      <span class="clock">● Abrimos a las 5:30 de la mañana</span>
+      <h1>Comida casera de verdad, <span>en Leganés</span></h1>
+      <p class="lead">Menú del día con bebida, pan y postre por 13,50 €. Raciones generosas, parrilla, arroces y asados por encargo. Y una terraza cubierta para 150 personas.</p>
+      <div class="ctas">
+        <a class="btn btn-wheat" href="tel:+34635505693">Reservar · 635 50 56 93</a>
+        <a class="btn btn-ghost" href="#menus">Ver los menús</a>
+      </div>
+      <div class="proof">
+        <div><b>4,5 ★</b><small>1.832 opiniones en Google</small></div>
+        <div><b>13,50 €</b><small>Menú del día</small></div>
+        <div><b>150</b><small>Plazas en terraza cubierta</small></div>
+      </div>
+    </div>
+    <div class="ticket" aria-label="Ejemplo de menú del día">
+      <div class="top"><div><p class="eyebrow" style="margin:0 0 6px">Así es un menú del día</p><h3>Menú del día</h3></div><span class="pr">13,50 €</span></div>
+      <p class="inc">Con bebida, pan y postre o café. De lunes a viernes, comida y cena.</p>
+      <p class="grp">Primeros, por ejemplo</p>
+      <ul><li>Arroz con bogavante</li><li>Fabes con matanza</li><li>Migas extremeñas</li><li>Judías a la madrileña</li><li>Patata bomba</li></ul>
+      <p class="grp">Segundos, por ejemplo</p>
+      <ul><li>Redondo de ternera</li><li>Costillas asadas</li><li>Calamares a la marinera</li><li>Milanesa de pollo</li><li>Pescado del día</li></ul>
+      <p class="foot">Jubilados 10,50 € · Para recoger 12 € · Postres caseros</p>
+    </div>
+  </div>
+</section>
+
+<div class="strip"><div class="wrap"><ul>
+  <li><b>Desde las 5:30</b><small>De lunes a viernes</small></li>
+  <li><b>Terraza cubierta</b><small>Climatizada, para 150 personas</small></li>
+  <li><b>Para llevar</b><small>Menús, arroces y raciones</small></li>
+  <li><b>Eventos</b><small>Comuniones, cumpleaños, empresas</small></li>
+</ul></div></div>
+
+<section><div class="wrap">
+  <div class="head"><div><p class="eyebrow">Un día en El Trigo</p><h2>De la madrugada a la medianoche</h2></div><p>Abrimos antes que nadie y cerramos a la una. Pásate cuando quieras.</p></div>
+  <div class="timeline">
+    <div class="slot"><span class="h">5:30</span><h3>Desayunos</h3><p>Café con bollería y zumo. Desayuno americano de 8:30 a 11:30.</p><span class="p">Desde 3,50 €</span></div>
+    <div class="slot"><span class="h">13:00</span><h3>Menú del día</h3><p>Primero, segundo, bebida, pan y postre o café. También para recoger.</p><span class="p">13,50 €</span></div>
+    <div class="slot"><span class="h">17:30</span><h3>Meriendas y combinados</h3><p>Platos combinados, bocadillos y el combinado americano de 17:30 a 20:30.</p><span class="p">Desde 4,50 €</span></div>
+    <div class="slot"><span class="h">21:00</span><h3>Cenas</h3><p>Menú del día también en la cena, raciones y parrilla.</p><span class="p">Hasta la 1:00</span></div>
+  </div>
+</div></section>
+
+<section class="menus" id="menus"><div class="wrap">
+  <div class="head"><div><p class="eyebrow">Nuestros menús</p><h2>Comer bien sin gastar de más</h2></div><p>Todos con bebida y pan. Los menús también se pueden recoger para llevar a casa.</p></div>
+  <div class="mgrid">
+    <article class="mcard hot">
+      <span class="k">De lunes a viernes</span><h3>Menú del día</h3><span class="pr">13,50 €</span>
+      <p>Primero y segundo a elegir, bebida, pan y postre o café. Comida y cena. Con menú dieta para quien lo pida.</p>
+      <div class="mini"><span><span>Jubilados</span><b>10,50 €</b></span><span><span>Para recoger</span><b>12 €</b></span><span><span>Niños los viernes (&lt;12)</span><b>7,95 €</b></span></div>
+    </article>
+    <article class="mcard">
+      <span class="k">Sábados y domingos</span><h3>Menú de fin de semana</h3><span class="pr">24,95 €</span>
+      <p>Aperitivos para la mesa, primero y segundo a elegir entre unas diez opciones cada uno, postre casero, bebida, pan y chupito.</p>
+      <div class="mini"><span><span>Para recoger</span><b>22,95 €</b></span><span><span>Infantil (hasta 14)</span><b>15 €</b></span></div>
+    </article>
+    <article class="mcard">
+      <span class="k">Para darse un capricho</span><h3>Menú gourmet</h3><span class="pr">36 €</span>
+      <p>Aperitivos, primeros y segundos especiales, pan, una botella de Rioja y postre o café. Para grupos, con reserva previa.</p>
+      <div class="mini"><span><span>Asado entero por encargo</span><b>150 €</b></span><span><span>Cochinillo, cabrito o cordero</span><b>Consultar</b></span></div>
+    </article>
+  </div>
+</div></section>
+
+<section id="carta"><div class="wrap">
+  <div class="head"><div><p class="eyebrow">La carta</p><h2>Raciones de las que llenan</h2></div><p>“Las raciones son muy generosas”, repiten nuestros clientes. Y las croquetas, que no se te olviden.</p></div>
+  <div class="tabs" role="tablist" aria-label="Secciones de la carta">
+    <button class="tab" role="tab" aria-selected="true" aria-controls="c-rac" id="t-rac">Raciones</button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="c-par" id="t-par">Parrilla</button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="c-arr" id="t-arr">Arroces</button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="c-com" id="t-com">Combinados y bocadillos</button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="c-des" id="t-des">Desayunos</button>
+  </div>
+  <div class="panel" role="tabpanel" id="c-rac" aria-labelledby="t-rac">
+    <div class="it"><span>Croquetas</span><span class="p">14 €</span></div>
+    <div class="it"><span>Torreznos de Soria</span><span class="p">13 €</span></div>
+    <div class="it"><span>Huevos rotos con jamón</span><span class="p">13 €</span></div>
+    <div class="it"><span>Pulpo a la gallega</span><span class="p">19 €</span></div>
+    <div class="it"><span>Jamón ibérico</span><span class="p">19 €</span></div>
+    <div class="it"><span>Queso manchego</span><span class="p">14 €</span></div>
+    <div class="it"><span>Fritura de pescado</span><span class="p">13 €</span></div>
+    <div class="it"><span>Sepia a la plancha</span><span class="p">12 €</span></div>
+    <div class="it"><span>Callos</span><span class="p">11 €</span></div>
+    <div class="it"><span>Calamares a la andaluza</span><span class="p">11 €</span></div>
+    <div class="it"><span>Alitas de pollo</span><span class="p">11 €</span></div>
+    <div class="it"><span>Tirabuzones de pollo</span><span class="p">11 €</span></div>
+    <div class="it"><span>Mejillones al vapor</span><span class="p">11 €</span></div>
+    <div class="it"><span>Ensaladilla rusa</span><span class="p">11 €</span></div>
+    <div class="it"><span>Oreja a la plancha</span><span class="p">10 €</span></div>
+    <div class="it"><span>Patatas bravas o alioli</span><span class="p">9,50 €</span></div>
+  </div>
+  <div class="panel" role="tabpanel" id="c-par" aria-labelledby="t-par" hidden>
+    <div class="it"><span>Solomillo</span><span class="p">24,50 €</span></div>
+    <div class="it"><span>Bandeja de chuletitas de cordero</span><span class="p">20 €</span></div>
+    <div class="it"><span>Chuletón</span><span class="p">17 €</span></div>
+    <div class="it"><span>Superentrecot</span><span class="p">15 €</span></div>
+    <div class="it"><span>Cachopo</span><span class="p">15 €</span></div>
+    <p class="pn">La parrilla incluye bebida y pan.</p>
+  </div>
+  <div class="panel" role="tabpanel" id="c-arr" aria-labelledby="t-arr" hidden>
+    <div class="it"><span>Paella mixta<small>Por ración</small></span><span class="p">11 €</span></div>
+    <div class="it"><span>Arroz a banda<small>Por ración</small></span><span class="p">11 €</span></div>
+    <div class="it"><span>Paella de verduras<small>Por ración</small></span><span class="p">11 €</span></div>
+    <p class="pn">Para tomar aquí o para llevar a casa.</p>
+  </div>
+  <div class="panel" role="tabpanel" id="c-com" aria-labelledby="t-com" hidden>
+    <div class="it"><span>Platos combinados<small>Lomo con huevo y patatas, hamburguesa, tortilla y más (10 opciones)</small></span><span class="p">8,50 €</span></div>
+    <div class="it"><span>Plato combinado con bebida</span><span class="p">9,50 €</span></div>
+    <div class="it"><span>Bocadillos</span><span class="p">desde 5 €</span></div>
+    <div class="it"><span>Bocadillo del día con bebida</span><span class="p">5,50 €</span></div>
+    <div class="it"><span>Bocadillos sugerencia del chef</span><span class="p">9 €</span></div>
+  </div>
+  <div class="panel" role="tabpanel" id="c-des" aria-labelledby="t-des" hidden>
+    <div class="it"><span>Café con bollería y zumo</span><span class="p">3,50 €</span></div>
+    <div class="it"><span>Desayuno americano<small>De 8:30 a 11:30</small></span><span class="p">4,50 €</span></div>
+    <div class="it"><span>Combinado americano<small>De 17:30 a 20:30</small></span><span class="p">4,50 €</span></div>
+  </div>
+</div></section>
+
+<section class="events" id="eventos"><div class="wrap">
+  <div>
+    <p class="eyebrow">Celebraciones</p>
+    <h2>Tu comunión, tu cumple o la cena de empresa, aquí</h2>
+    <p>Menús para grupos de 30 a 60 € por persona, con primeros y segundos a elegir, vino o cava y postre. Te hacemos el presupuesto a medida para bodas, bautizos, comuniones, cumpleaños y empresas.</p>
+    <a class="btn btn-green" href="tel:+34635505693" style="margin-top:8px">Pedir presupuesto</a>
+  </div>
+  <div class="gifts">
+    <div class="gift"><i>1</i><div><b>Menú del protagonista gratis</b><span>A partir de 25 comensales, el del novio, cumpleañero o comulgante va por nuestra cuenta.</span></div></div>
+    <div class="gift"><i>2</i><div><b>La tarta, también</b><span>En eventos de 25 personas o más.</span></div></div>
+    <div class="gift"><i>3</i><div><b>Despedidas de soltero</b><span>Una botella de ron o whisky por cada 8 personas.</span></div></div>
+    <div class="gift"><i>4</i><div><b>Salón para fiestas</b><span>Los viernes y sábados por la noche.</span></div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="head"><div><p class="eyebrow">El local</p><h2>Sitio hay para todos</h2></div></div>
+  <div class="terrace">
+    <div class="tc"><b>150</b><span>Plazas en nuestra terraza cubierta y climatizada, todo el año.</span></div>
+    <div class="tc"><b>7 días</b><span>Abiertos toda la semana, de madrugada a medianoche.</span></div>
+    <div class="tc"><b>Para llevar</b><span>Menús, arroces y raciones listos para recoger.</span></div>
+  </div>
+</div></section>
+
+<section class="reviews"><div class="wrap">
+  <div class="head"><div><p class="eyebrow">Opiniones</p><h2>Lo que dicen de nosotros</h2></div><p>Resumen de lo que más repiten nuestros clientes en Google.</p></div>
+  <div class="big"><b>4,5</b><div><div class="st">★★★★★</div><span style="color:var(--green-muted)">1.832 opiniones en Google</span></div></div>
+  <div class="says">
+    <div class="say"><b>De los de antes</b><span>“Un sitio español típico, como ya no se encuentran”.</span></div>
+    <div class="say"><b>Raciones generosas</b><span>Nadie se va con hambre, y los postres, muy buenos.</span></div>
+    <div class="say"><b>Las croquetas</b><span>Imprescindibles, según quien viene por primera vez.</span></div>
+    <div class="say"><b>Un equipo de diez</b><span>Manu, Mila, Sandra… rápidos, amables y que te aconsejan.</span></div>
+  </div>
+</div></section>
+
+<section class="visit" id="visitanos"><div class="wrap">
+  <div>
+    <p class="eyebrow">Visítanos</p><h2>Calle del Trigo, 36</h2>
+    <p class="addr">Calle del Trigo, 36<br>28914 Leganés, Madrid</p>
+    <span class="num" id="num">635 50 56 93</span>
+    <button class="copy" type="button" data-copy="635 50 56 93">Copiar número</button>
+    <a class="mapcard" href="https://www.google.com/maps/search/?api=1&query=Restaurante+El+Trigo+Legan%C3%A9s&query_place_id=ChIJtaJcH6qLQQ0Ryx6CjApw7C4" target="_blank" rel="noopener" aria-label="Abrir en Google Maps">
+      <svg viewBox="0 0 520 170" aria-hidden="true"><rect width="520" height="170" fill="var(--soft)"/>
+      <g stroke="var(--surface)" stroke-width="16" fill="none" stroke-linecap="round"><path d="M-10 104 L530 78"/><path d="M170 -10 L205 180"/><path d="M405 -10 L382 180"/></g>
+      <g stroke="var(--surface)" stroke-width="6" fill="none" opacity=".8"><path d="M-10 30 L530 22"/><path d="M70 -10 L88 180"/><path d="M292 -10 L300 180"/></g>
+      <text x="236" y="76" fill="var(--muted)" font-family="sans-serif" font-size="12" font-weight="700" transform="rotate(-3 236 76)">Calle del Trigo</text>
+      <circle cx="252" cy="96" r="24" fill="#D9A23A" opacity=".3"/>
+      <path d="M252 108 C242 94 236 86 236 78 a16 16 0 0 1 32 0 c0 8 -6 16 -16 30z" fill="#1F3B2C" stroke="#fff" stroke-width="2"/><circle cx="252" cy="78" r="5" fill="#D9A23A"/></svg>
+      <span>Cómo llegar →</span></a>
+  </div>
+  <div>
+    <h3 style="font-size:1.9rem">Horario</h3>
+    <table class="hours"><tbody>
+      <tr><td>Lunes a viernes</td><td>5:30 – 1:00</td></tr>
+      <tr><td>Sábado</td><td>8:00 – 2:00</td></tr>
+      <tr><td>Domingo</td><td>8:00 – 1:00</td></tr>
+    </tbody></table>
+    <div class="pay"><span>Tarjeta</span><span>Cheque Gourmet</span><span>Sodexo</span><span>Para llevar</span></div>
+  </div>
+</div></section>
+</main>
+<footer><div class="wrap"><b>Restaurante El Trigo</b><span>Calle del Trigo, 36 · 28914 Leganés</span></div></footer>
+<div class="callbar"><a class="btn btn-wheat" href="tel:+34635505693">Reservar</a><a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Restaurante+El+Trigo+Legan%C3%A9s&query_place_id=ChIJtaJcH6qLQQ0Ryx6CjApw7C4" target="_blank" rel="noopener">Cómo llegar</a></div>
+<script>
+document.querySelectorAll('.tab').forEach(function(tab){tab.addEventListener('click',function(){document.querySelectorAll('.tab').forEach(function(t){var on=t===tab;t.setAttribute('aria-selected',on);document.getElementById(t.getAttribute('aria-controls')).hidden=!on;});});});
+document.querySelectorAll('.copy').forEach(function(b){b.addEventListener('click',function(){var t=b.textContent;function d(){b.textContent='Copiado';setTimeout(function(){b.textContent=t},1600)}try{navigator.clipboard.writeText(b.dataset.copy).then(d,function(){})}catch(e){}})});
+</script>
+</body>
+</html>
