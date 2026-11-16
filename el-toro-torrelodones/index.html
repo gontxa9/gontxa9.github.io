@@ -231,6 +231,7 @@ nav.links a.on{color:var(--act)}
 .each{display:inline-block;vertical-align:middle;font-family:var(--font);font-size:.8rem;font-weight:600;background:var(--act);color:#fff;border-radius:999px;padding:3px 10px;margin-left:8px;letter-spacing:0}
 .list .note .each{margin-left:0}
 @media (max-width:520px){.dishes{grid-template-columns:1fr 1fr!important;gap:10px}.dish figcaption{padding:12px}.dish b{font-size:.9rem}.dish small{font-size:.76rem}.dish span{font-size:1.05rem}}
+.crumbs{display:none}.crumbs.show{display:block;animation:fade .3s ease}
 </style>
 
 </head>
@@ -472,7 +473,7 @@ document.querySelectorAll('.copy').forEach(function(b){b.addEventListener('click
   var home='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/></svg>';
 
   function crumb(path){var html='<li><a class="home" href="#/">'+home+'El Toro</a></li>',acc='';
-    path.forEach(function(p){acc+='/'+p.id;html+='<li><a href="#'+acc+'">'+esc(p.t)+'</a></li>'});crumbs.innerHTML=html;back.disabled=!path.length}
+    path.forEach(function(p){acc+='/'+p.id;html+='<li><a href="#'+acc+'">'+esc(p.t)+'</a></li>'});crumbs.innerHTML=html;back.disabled=!path.length;document.querySelector('.crumbs').classList.toggle('show',path.length>1)}
 
   function route(){
     var h=location.hash;if(h&&h.indexOf('#/')!==0)return; // anclas internas (#bandeja)

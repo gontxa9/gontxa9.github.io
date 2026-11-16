@@ -215,6 +215,7 @@ footer b{font-family:var(--display);font-weight:800;font-size:1.3rem;color:var(-
 @media (min-width:901px){footer{padding-bottom:30px}}
 .callbar{display:none}
 @media (max-width:900px){.callbar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--surface);border-top:1px solid var(--line);padding-top:10px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}.callbar .btn-line{color:var(--ink)}}
+.crumbs{display:none}.crumbs.show{display:block;animation:fade .3s ease}
 </style>
 </head>
 <body>
@@ -443,7 +444,7 @@ footer b{font-family:var(--display);font-weight:800;font-size:1.3rem;color:var(-
   var NAMES={'':'Inicio','carta':'Carta','a-domicilio':'A domicilio','opiniones':'Opiniones','como-llegar':'Cómo llegar'};
   var cbody=document.getElementById('cbody'),q=document.getElementById('q'),crumbs=document.getElementById('crumbs'),back=document.getElementById('back'),fotos=document.getElementById('fotos');
   var home='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/></svg>';
-  function crumb(path){var html='<li><a class="home" href="#/">'+home+'Bar 53</a></li>',acc='';path.forEach(function(p){acc+='/'+p.id;html+='<li><a href="#'+acc+'">'+esc(p.t)+'</a></li>'});crumbs.innerHTML=html;back.disabled=!path.length}
+  function crumb(path){var html='<li><a class="home" href="#/">'+home+'Bar 53</a></li>',acc='';path.forEach(function(p){acc+='/'+p.id;html+='<li><a href="#'+acc+'">'+esc(p.t)+'</a></li>'});crumbs.innerHTML=html;back.disabled=!path.length;document.querySelector('.crumbs').classList.toggle('show',path.length>1)}
   function route(){
     var h=location.hash;if(h&&h.indexOf('#/')!==0)return;
     var parts=(h||'#/').slice(2).split('/').filter(Boolean),top=parts[0]||'',sub=parts[1];
