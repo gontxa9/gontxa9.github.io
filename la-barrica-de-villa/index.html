@@ -7,7 +7,7 @@
 <meta name="description" content="La Barrica de Villa, bar restaurante en la avenida Príncipe de Asturias 88, Villaviciosa de Odón. Empanadillas criollas con chimichurri, croquetas caseras, patatas braviolis, tostas, nachos y opciones veganas. Terraza y tapa con la bebida.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Bebas+Neue&family=Mr+Dafoe&family=Inter:wght@400;500;600&display=swap">
 <style>
 /* Concepto: lo que más repiten los clientes es "fuimos a tomar algo y al final cenamos".
    La pieza original es un vaso de cerveza que se llena al arrastrar: de "una caña" a "al final cenamos",
@@ -44,9 +44,12 @@ h2{font-size:clamp(2.4rem,5vw,3.8rem)}
 .demo{background:var(--soft);font-size:.8rem;text-align:center;color:var(--muted)}.demo .wrap{padding-block:7px}
 header.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:10px}
-.logo{text-decoration:none;display:flex;flex-direction:column;line-height:1}
-.logo b{font-family:var(--font);font-weight:600;font-size:1.25rem;letter-spacing:.18em;text-transform:uppercase;border:2px solid currentColor;padding:5px 9px 4px}
-.logo small{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+.logo{text-decoration:none;display:flex;align-items:center;gap:10px;line-height:1}
+.lb{position:relative;display:inline-block;background:#111;color:#F4F1EA;padding:10px 12px 5px;outline:1.5px solid #F4F1EA;outline-offset:-5px;box-shadow:0 0 0 1px #111}
+.lb b{font-family:"Bebas Neue",var(--font);font-weight:400;font-size:1.75rem;letter-spacing:.04em;display:block}
+.lb i{position:absolute;left:8px;top:-3px;font-family:"Mr Dafoe",cursive;font-style:normal;font-size:1.35rem;color:#F4F1EA;text-shadow:0 0 3px #111,0 0 3px #111}
+.logo small{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:520px){.logo small{display:none}}
 nav.links{display:flex;gap:24px;font-weight:500;font-size:.94rem}nav.links a{text-decoration:none;color:var(--muted);transition:color var(--ease)}nav.links a:hover{color:var(--ink)}nav.links a.on{color:var(--act)}
 .tabs{display:none}
 @media (max-width:900px){nav.links{display:none}header.top .btn{padding:9px 16px;font-size:.9rem}.tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:10px max(16px,env(safe-area-inset-left,0px));background:var(--bg);border-bottom:1px solid var(--line)}.tabs::-webkit-scrollbar{display:none}.tabs a{flex:none;text-decoration:none;font-size:.9rem;font-weight:500;padding:7px 14px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}.tabs a.on{background:var(--act);border-color:var(--act);color:#fff}}
@@ -181,7 +184,7 @@ section{padding-block:100px}@media (max-width:900px){section{padding-block:64px}
 .mapcard span{position:absolute;left:14px;bottom:14px;background:var(--act);color:#fff;font-weight:600;padding:9px 18px;border-radius:999px;font-size:.92rem}
 @media (max-width:900px){.visit .wrap{grid-template-columns:1fr;gap:40px}}
 footer{background:var(--night);color:var(--night-muted);padding-block:26px 110px;font-size:.88rem;border-top:1px solid #322E29}footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
-footer b{font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--night-ink)}
+footer b{font-family:"Bebas Neue",var(--font);font-weight:400;font-size:1.5rem;letter-spacing:.04em;color:var(--night-ink)}
 @media (min-width:901px){footer{padding-bottom:30px}}
 .callbar{display:none}
 @media (max-width:900px){.callbar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--surface);border-top:1px solid var(--line);padding-top:10px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}.callbar .btn-line{color:var(--ink)}}
@@ -190,7 +193,7 @@ footer b{font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var
 <body>
 <div class="demo"><div class="wrap">Vista previa · Propuesta de web para La Barrica de Villa</div></div>
 <header class="top"><div class="wrap">
-  <a class="logo" href="#/"><b>Barrica</b><small>de Villa · Bar restaurante</small></a>
+  <a class="logo" href="#/" aria-label="La Barrica de Villa, inicio"><span class="lb"><i>La</i><b>BARRICA</b></span><small>de Villa<br>Bar restaurante</small></a>
   <nav class="links" aria-label="Apartados"><a href="#/" data-r="">Inicio</a><a href="#/carta" data-r="carta">Lo que se pide</a><a href="#/opiniones" data-r="opiniones">Opiniones</a><a href="#/como-llegar" data-r="como-llegar">Cómo llegar</a></nav>
   <a class="btn btn-act" href="tel:+34680553345">Reservar</a>
 </div></header>
@@ -353,7 +356,7 @@ footer b{font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var
 </div></section>
 </div>
 </main>
-<footer><div class="wrap"><b>Barrica de Villa</b><span>Av. Príncipe de Asturias, 88 · Villaviciosa de Odón · 680 55 33 45</span></div></footer>
+<footer><div class="wrap"><b>La Barrica de Villa</b><span>Av. Príncipe de Asturias, 88 · Villaviciosa de Odón · 680 55 33 45</span></div></footer>
 <div class="callbar"><a class="btn btn-act" href="tel:+34680553345">Reservar</a><a class="btn btn-line" href="https://www.google.com/maps/place/Bar+restaurante+La+Barrica+de+Villa/@40.3584796,-3.9066259,17z/data=!3m1!4b1!4m6!3m5!1s0xd41913a020a0a95:0x35edbdbe9d1f98f5!8m2!3d40.3584796!4d-3.9066259!16s%2Fg%2F11fmf29vs5" target="_blank" rel="noopener">Cómo llegar</a></div>
 <script>
 (function(){
