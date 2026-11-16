@@ -205,7 +205,6 @@ footer b{font-family:var(--display);font-style:italic;font-size:1.6rem;color:var
         <path class="draw" d="M110 120 C200 120 250 140 300 170 S460 260 610 300"/>
         <g class="stop sel" tabindex="0" role="button" data-k="zamora" aria-label="Zamora"><circle class="r" cx="110" cy="120" r="14"/><text x="72" y="92">ZAMORA</text></g>
         <g class="stop" tabindex="0" role="button" data-k="toro" aria-label="Toro"><circle class="r" cx="230" cy="130" r="12"/><text x="208" y="104">TORO</text></g>
-        <g class="stop" tabindex="0" role="button" data-k="castilla" aria-label="Castilla"><circle class="r" cx="400" cy="214" r="12"/><text x="356" y="192">CASTILLA</text></g>
         <g class="stop" tabindex="0" role="button" data-k="pozuelo" aria-label="Pozuelo"><circle class="r" cx="610" cy="300" r="16"/><circle class="c" cx="610" cy="300" r="6"/><text x="548" y="340">POZUELO</text></g>
       </svg>
     </div>
@@ -296,8 +295,7 @@ footer b{font-family:var(--display);font-style:italic;font-size:1.6rem;color:var
   var D={
     zamora:{k:'Parada 1',h:'Zamora',p:'De aquí vienen el tomate zamorano y la tarta de queso de Zamora. La base de la casa.',q:'“Los torreznos, el tomate zamorano, las croquetas y las carnes, sencillamente impresionantes.”'},
     toro:{k:'Parada 2',h:'Toro',p:'Tierra de tintos a orillas del Duero. En la mesa, vinos de la D.O. Toro como el Latarce Selección.',q:'“Un Latarce Selección (D.O. Toro), potente y redondo, perfecto para acompañar los platos.”'},
-    castilla:{k:'Parada 3',h:'Castilla',p:'Cocina castellana de siempre: torreznos, cecina, ancas de rana, boletus, callos y carne de vaca madurada.',q:'“Volveremos a probar la casquería y la cecina, que tenía muy buena pinta.”'},
-    pozuelo:{k:'Destino',h:'Avenida de Europa',p:'Todo llega a un pequeño rincón de Pozuelo, con un toque diferente. Reserva tu mesa y pruébalo.',q:'“Se nota la pasión por la gastronomía en cada detalle.”'}
+    pozuelo:{k:'Destino',h:'Avenida de Europa',p:'Aquí se junta todo con la cocina de la casa: torreznos, cecina, ancas de rana, boletus y carne de vaca madurada. Un pequeño rincón de Pozuelo con un toque diferente.',q:'“Se nota la pasión por la gastronomía en cada detalle.”'}
   };
   var stops=document.querySelectorAll('.stop');
   function show(k){var d=D[k];stops.forEach(function(s){s.classList.toggle('sel',s.dataset.k===k)});document.getElementById('ck').textContent=d.k;document.getElementById('ch').textContent=d.h;document.getElementById('cp').textContent=d.p;document.getElementById('cq').textContent=d.q}
