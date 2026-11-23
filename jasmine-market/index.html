@@ -355,15 +355,15 @@ show(0);window.__show=show;
 
 // ---------- hours (Google): Tue–Sun 11 a.m.–8 p.m., Mon closed; holiday closure Nov 20–26, 2026
 var H={0:[11,20],1:null,2:[11,20],3:[11,20],4:[11,20],5:[11,20],6:[11,20]},DN=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-var CL=['2026-11-20','2026-11-26'];
+var CL=['2026-11-20','2026-11-29'];
 function la(){var d=new Date(),s=d.toLocaleString('en-US',{timeZone:'America/Los_Angeles',hour12:false,weekday:'short',hour:'2-digit',minute:'2-digit'}).split(/[ ,:]+/),ymd=d.toLocaleDateString('en-CA',{timeZone:'America/Los_Angeles'});return {d:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(s[0]),h:(+s[1]%24)+(+s[2])/60,ymd:ymd}}
 function f(t){return (t%12||12)+(t>=12?' PM':' AM')}
 function next(d){for(var i=1;i<=7;i++){var n=(d+i)%7;if(H[n])return {n:n,i:i}}}
 function upd(){var t=la(),hol=t.ymd>=CL[0]&&t.ymd<=CL[1],r=hol?null:H[t.d],open=r&&t.h>=r[0]&&t.h<r[1],txt;
- if(hol)txt='Closed for the holiday week · through Nov 26';
+ if(hol)txt='Closed for the holidays · through Nov 29';
  else if(open)txt='Open now · until '+f(r[1]);else if(r&&t.h<r[0])txt='Opens today at '+f(r[0]);else{var x=next(t.d);txt='Closed · opens '+(x.i===1?'tomorrow':DN[x.n])+' at '+f(H[x.n][0])}
  document.getElementById('dot').className='dot'+(open?' on':'');document.getElementById('statusTxt').textContent=txt;
- var nt=document.getElementById('notice');if(hol){nt.style.display='block';nt.textContent='Holiday hours: closed November 20–26.'}else nt.style.display='none';
+ var nt=document.getElementById('notice');if(hol){nt.style.display='block';nt.textContent='Holiday hours: closed November 20–29.'}else nt.style.display='none';
  var h='';for(var i=1;i<=7;i++){var d=i%7,c=(d===t.d?'today ':'')+(H[d]?'':'closed');h+='<div class="'+c+'"><span>'+DN[d]+'</span><span>'+(H[d]?f(H[d][0])+' – '+f(H[d][1]):'Closed')+'</span></div>'}
  document.getElementById('hours').innerHTML=h}
 upd();setInterval(upd,60000);
